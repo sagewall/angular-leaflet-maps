@@ -2,12 +2,14 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
 
 describe('App: AngularLeafletMaps', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        LeafletMapComponent
       ],
     });
   });

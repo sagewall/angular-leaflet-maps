@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { LeafletMapComponent } from './leaflet-map/leaflet-map.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LeafletMapComponent
   ],
   imports: [
     BrowserModule,
