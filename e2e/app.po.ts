@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AngularLeafletMapsPage {
+export class AngularLeafletMapNewPage {
   navigateTo() {
     return browser.get('/');
   }

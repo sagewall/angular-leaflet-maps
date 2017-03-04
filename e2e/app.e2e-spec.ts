@@ -1,10 +1,10 @@
-import { AngularLeafletMapsPage } from './app.po';
+import { AngularLeafletMapNewPage } from './app.po';
 
-describe('angular-leaflet-maps App', function() {
-  let page: AngularLeafletMapsPage;
+describe('angular-leaflet-map-new App', () => {
+  let page: AngularLeafletMapNewPage;
 
   beforeEach(() => {
-    page = new AngularLeafletMapsPage();
+    page = new AngularLeafletMapNewPage();
   });
 
   it('should display message saying app works', () => {
