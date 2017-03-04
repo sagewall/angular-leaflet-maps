@@ -46,7 +46,12 @@ export class LeafletMapComponent implements OnInit {
     };
 
     L.geoJSON(geojsonFeature, {
-      pointToLayer: function (feature, latlng) {
+      onEachFeature: (feature: any, layer)  => {
+        if (feature.properties && feature.properties.popupContent) {
+          layer.bindPopup(feature.properties.popupContent);
+        }
+      },
+      pointToLayer: (feature, latlng) => {
         return L.circleMarker(latlng, geojsonMarkerOptions);
       }
     }).addTo(map);
