@@ -23,17 +23,31 @@ export class LeafletMapComponent implements OnInit {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    const geojsonFeature = {
-      'type': 'Feature',
-      'properties': {
-        'name': 'Coors Field',
-        'amenity': 'Baseball Stadium',
-        'popupContent': 'This is where the Rockies play!'
-      },
-      'geometry': {
-        'type': 'Point',
-        'coordinates': [-104.99404, 39.75621]
-      }
+    const geojsonFeatures = {
+      'type': 'FeatureCollection',
+      'features': [{
+        'type': 'Feature',
+        'properties': {
+          'name': 'Coors Field',
+          'amenity': 'Baseball Stadium',
+          'popupContent': 'This is where the Rockies play!'
+        },
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [-104.99404, 39.75621]
+        }
+      }, {
+        'type': 'Feature',
+        'properties': {
+          'name': 'Coors Field Parking',
+          'amenity': 'Parking Lot',
+          'popupContent': 'This is where the Rockies park!'
+        },
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [-104.9936, 39.7578]
+        }
+      }]
     };
 
     const geojsonMarkerOptions = {
@@ -45,7 +59,7 @@ export class LeafletMapComponent implements OnInit {
       fillOpacity: 0.8
     };
 
-    L.geoJSON(geojsonFeature, {
+    L.geoJSON(geojsonFeatures, {
       onEachFeature: (feature: any, layer)  => {
         if (feature.properties && feature.properties.popupContent) {
           layer.bindPopup(feature.properties.popupContent);
